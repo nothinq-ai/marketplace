@@ -1,14 +1,17 @@
 {
-  "name": "@nothing/marketplace",
-  "version": "1.1.0",
+  "name": "@nothinq/marketplace",
+  "version": "0.2.0",
   "description": "Nothinq Marketplace Index",
   "license": "MIT",
   "author": "",
   "type": "module",
   "main": "public/index.json",
+  "private": false,
   "scripts": {
     "build": "bun scripts/build.ts",
-    "release": "semantic-release"
+    "prepublishOnly": "bun run build",
+    "release": "npm publish --access public",
+    "semantic:release": "semantic-release"
   },
   "publishConfig": {
     "access": "public",
