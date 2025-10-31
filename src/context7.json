@@ -4,7 +4,7 @@
   "author": "uptash",
   "manifest": "http://localhost:3400/manifest.json",
   "meta": {
-    "description": "Up-to-date documentation for LLMs and AI code editors.",
+    "description": "Up-to-date documentation for LLMs and AI code editors",
     "logo": "https://context7.com/favicon.ico",
     "tags": ["document"]
   },
