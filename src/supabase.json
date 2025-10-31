@@ -1,0 +1,13 @@
+{
+  "identifier": "supabase",
+  "type": "extension",
+  "author": "supabase-community",
+  "manifest": "http://localhost:3400/manifest.json",
+  "meta": {
+    "description": "Connect your Supabase projects to AI assistants like Cursor and Claude. Manage tables, fetch configurations, and query data seamlessly with your AI tools. Enhance your development workflow by integrating AI capabilities directly into your Supabase projects.",
+    "logo": "https://cdn.brandfetch.io/idsSceG8fK/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1668829260323",
+    "tags": ["database", "auth"]
+  },
+  "version": "1.0.0",
+  "verified": true
+}

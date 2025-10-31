@@ -1,0 +1,12 @@
+{
+  "identifier": "id of your extension",
+  "type": "extension",
+  "author": "your name",
+  "manifest": "https://url.to/manifest.json",
+  "meta": {
+    "description": "description of your extension",
+    "logo": "logo url",
+    "tags": ["tag1", "tag2"]
+  },
+  "version": "1.0.0"
+}
