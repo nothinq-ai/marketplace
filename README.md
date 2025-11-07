@@ -1,8 +1,6 @@
-# Nothinq Marketplace Index
-
 # Nothinq SDK
 
-A TypeScript SDK for building extensions that integrate with the Nothinq platform. This SDK provides a communication bridge between extensions and the Nothinq host application using Comlink for seamless RPC-style messaging.
+A TypeScript SDK for building extensions that integrate with the Nothinq platform. This SDK provides a communication bridge between extensions and the Nothinq host application.
 
 ## Table of Contents
 
