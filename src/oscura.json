@@ -4,7 +4,7 @@
   "author": "narative",
   "manifest": "https://raw.githubusercontent.com/nothinq-ai/marketplace/refs/heads/main/extensions/oscura/manifest.json",
   "meta": {
-    "description": "An unapologetically dark and minimal theme.",
+    "description": "An unapologetically dark and minimal theme",
     "logo": "https://fey.gallerycdn.vsassets.io/extensions/fey/oscura/0.1.4/1742918859686/Microsoft.VisualStudio.Services.Icons.Default",
     "tags": ["theme"]
   },
