@@ -1,0 +1,26 @@
+{
+  "identifier": "oscura",
+  "meta": {
+    "description": "An unapologetically dark and minimal theme.",
+    "logo": "https://fey.gallerycdn.vsassets.io/extensions/fey/oscura/0.1.4/1742918859686/Microsoft.VisualStudio.Services.Icons.Default",
+    "tags": ["theme"]
+  },
+  "author": "narative",
+  "overview": "https://raw.githubusercontent.com/narative/oscura/refs/heads/main/README.md",
+  "scope": "user",
+  "version": "1.0.0",
+  "themes": [
+    {
+      "id": "oscura-dusk",
+      "name": "Oscura Dusk",
+      "url": "https://raw.githubusercontent.com/narative/oscura/refs/heads/main/themes/oscura-dusk.json",
+      "type": "dark"
+    },
+    {
+      "id": "oscura-midnight",
+      "name": "Oscura Midnight",
+      "url": "https://raw.githubusercontent.com/narative/oscura/refs/heads/main/themes/oscura-midnight.json",
+      "type": "dark"
+    }
+  ]
+}

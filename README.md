@@ -75,22 +75,22 @@ bun add @nothinq/sdk
 ## Quick Start
 
 ```typescript
-import { createSDK } from '@nothinq/sdk';
+import { createSDK } from "@nothinq/sdk";
 
 // Create SDK instance with your config type
 const sdk = createSDK<MyConfigType>();
 
 // Wait for SDK to be ready
 sdk.onready(() => {
-  console.log('Extension is ready!');
-  
+  console.log("Extension is ready!");
+
   // Notify host that extension has loaded
   sdk.loaded();
 });
 
 // Check if running inside Nothinq app
 if (sdk.inapp()) {
-  console.log('Running inside Nothinq');
+  console.log("Running inside Nothinq");
 }
 ```
 
@@ -209,6 +209,7 @@ Define user-configurable settings with validation:
 **Field Types:**
 
 - **`string`**: Text input
+
   ```json
   {
     "type": "string",
@@ -217,6 +218,7 @@ Define user-configurable settings with validation:
   ```
 
 - **`number`**: Numeric input
+
   ```json
   {
     "type": "number",
@@ -225,6 +227,7 @@ Define user-configurable settings with validation:
   ```
 
 - **`boolean`**: Checkbox/toggle
+
   ```json
   {
     "type": "boolean",
@@ -233,6 +236,7 @@ Define user-configurable settings with validation:
   ```
 
 - **`select`**: Dropdown selection
+
   ```json
   {
     "type": "select",
@@ -308,6 +312,7 @@ Integrate with Model Context Protocol servers:
 **Server Types:**
 
 - **`stdio`**: Standard input/output communication
+
   ```json
   {
     "type": "stdio",
@@ -318,6 +323,7 @@ Integrate with Model Context Protocol servers:
   ```
 
 - **`http`**: HTTP-based communication
+
   ```json
   {
     "type": "http",
@@ -463,18 +469,18 @@ Define commands that can be triggered (future support):
 To test your manifest locally:
 
 ```typescript
-import { createSDK } from '@nothinq/sdk';
+import { createSDK } from "@nothinq/sdk";
 
 const sdk = createSDK<YourConfigType>();
 
 sdk.onready(async () => {
   // Get the config defined in your manifest
   const config = await sdk.config.get();
-  console.log('Config:', config);
-  
+  console.log("Config:", config);
+
   // Config will match your config_schema structure
-  console.log('API Key:', config.apiKey);
-  console.log('Mode:', config.mode);
+  console.log("API Key:", config.apiKey);
+  console.log("Mode:", config.mode);
 });
 ```
 
@@ -510,20 +516,20 @@ The SDK provides a message router for bidirectional communication:
 
 ```typescript
 // Listen to specific message types
-const unsubscribe = sdk.listen('custom.event', async (message) => {
-  console.log('Received:', message);
+const unsubscribe = sdk.listen("custom.event", async (message) => {
+  console.log("Received:", message);
   return { success: true };
 });
 
 // Listen to all messages
 sdk.listen(async (message) => {
-  console.log('Global handler:', message);
+  console.log("Global handler:", message);
 });
 
 // Dispatch messages to host
 await sdk.dispatch({
-  type: 'custom.action',
-  data: { foo: 'bar' }
+  type: "custom.action",
+  data: { foo: "bar" },
 });
 
 // Cleanup
@@ -550,7 +556,7 @@ Register a callback that fires when both the extension and host are ready. If al
 
 ```typescript
 sdk.onready(() => {
-  console.log('Ready to communicate!');
+  console.log("Ready to communicate!");
 });
 ```
 
@@ -566,15 +572,16 @@ sdk.onready(() => {
 ```
 
 #### `listen(handler: MessageHandler): () => void`
+
 #### `listen(type: string, handler: MessageHandler): () => void`
 
 Listen for messages from the host application. Returns an unsubscribe function.
 
 ```typescript
 // Type-specific listener
-const unsubscribe = sdk.listen('user.action', async (message) => {
+const unsubscribe = sdk.listen("user.action", async (message) => {
   // Handle message
-  return { status: 'processed' };
+  return { status: "processed" };
 });
 
 // Global listener
@@ -589,8 +596,8 @@ Send a message to the host application.
 
 ```typescript
 await sdk.dispatch({
-  type: 'extension.event',
-  payload: { data: 'value' }
+  type: "extension.event",
+  payload: { data: "value" },
 });
 ```
 
@@ -616,13 +623,13 @@ Update the extension's configuration. Can optionally include credential informat
 
 ```typescript
 await sdk.config.set({
-  apiKey: 'new-key',
-  endpoint: 'https://api.example.com',
+  apiKey: "new-key",
+  endpoint: "https://api.example.com",
   credential: {
-    accessToken: 'token',
-    refreshToken: 'refresh',
-    expiresIn: 3600
-  }
+    accessToken: "token",
+    refreshToken: "refresh",
+    expiresIn: 3600,
+  },
 });
 ```
 
@@ -649,8 +656,8 @@ Set environment variables in the host application.
 
 ```typescript
 await sdk.env.set({
-  API_KEY: 'secret',
-  DEBUG: 'true'
+  API_KEY: "secret",
+  DEBUG: "true",
 });
 ```
 
@@ -661,7 +668,7 @@ await sdk.env.set({
 Read a file from the host's file system.
 
 ```typescript
-const content = await sdk.fs.read('/path/to/file.txt');
+const content = await sdk.fs.read("/path/to/file.txt");
 console.log(content);
 ```
 
@@ -670,7 +677,7 @@ console.log(content);
 Write data to a file in the host's file system.
 
 ```typescript
-await sdk.fs.write('/path/to/file.txt', 'Hello, World!');
+await sdk.fs.write("/path/to/file.txt", "Hello, World!");
 ```
 
 ### AI API
@@ -682,23 +689,23 @@ Insert context into the AI prompt input.
 ```typescript
 // Insert custom text context
 await sdk.ai.insertContextInput({
-  type: 'custom',
-  id: 'ctx-1',
-  name: 'User Data',
-  value: 'Some context text'
+  type: "custom",
+  id: "ctx-1",
+  name: "User Data",
+  value: "Some context text",
 });
 
 // Insert file attachment
 await sdk.ai.insertContextInput({
-  type: 'attachment',
-  id: 'file-1',
-  name: 'document.pdf',
+  type: "attachment",
+  id: "file-1",
+  name: "document.pdf",
   value: {
-    name: 'document.pdf',
-    url: 'https://example.com/doc.pdf',
-    contentType: 'application/pdf',
-    size: 1024000
-  }
+    name: "document.pdf",
+    url: "https://example.com/doc.pdf",
+    contentType: "application/pdf",
+    size: 1024000,
+  },
 });
 ```
 
@@ -710,7 +717,7 @@ Get the sandbox host URL.
 
 ```typescript
 const host = await sdk.sandbox.host();
-console.log('Sandbox host:', host);
+console.log("Sandbox host:", host);
 ```
 
 ## TypeScript Types
@@ -779,25 +786,25 @@ interface BaseMessage {
 The SDK includes a message router for handling incoming messages:
 
 ```typescript
-import { MessageRouter, MessageHandler } from '@nothinq/sdk';
+import { MessageRouter, MessageHandler } from "@nothinq/sdk";
 
 const router = new MessageRouter();
 
 // Set handler for specific message type
-router.setHandler('custom.event', async (message) => {
+router.setHandler("custom.event", async (message) => {
   return { processed: true };
 });
 
 // Set global handler
 router.setGlobalHandler(async (message) => {
-  console.log('All messages:', message);
+  console.log("All messages:", message);
 });
 
 // Handle a message
-await router.handleMessage({ type: 'custom.event', data: 'test' });
+await router.handleMessage({ type: "custom.event", data: "test" });
 
 // Remove handlers
-router.removeHandler('custom.event');
+router.removeHandler("custom.event");
 router.removeGlobalHandler();
 ```
 
@@ -811,7 +818,7 @@ Define your extension's configuration interface:
 interface StripeConfig {
   apiKey: string;
   webhookSecret: string;
-  mode: 'test' | 'live';
+  mode: "test" | "live";
 }
 
 const sdk = createSDK<StripeConfig>();
@@ -829,14 +836,14 @@ Store and retrieve OAuth tokens or API credentials:
 
 ```typescript
 await sdk.config.set({
-  apiKey: 'my-key',
+  apiKey: "my-key",
   credential: {
-    accessToken: 'access-token',
-    refreshToken: 'refresh-token',
+    accessToken: "access-token",
+    refreshToken: "refresh-token",
     expiresIn: 3600,
     expiresAt: Date.now() + 3600000,
-    tokenType: 'Bearer'
-  }
+    tokenType: "Bearer",
+  },
 });
 ```
 
@@ -849,10 +856,10 @@ const sdk = createSDK<ConfigType>();
 sdk.onready(async () => {
   // 2. Initialize your extension
   await initializeExtension();
-  
+
   // 3. Set up message listeners
-  sdk.listen('user.action', handleUserAction);
-  
+  sdk.listen("user.action", handleUserAction);
+
   // 4. Notify host that loading is complete
   sdk.loaded();
 });
@@ -868,7 +875,7 @@ The following APIs are deprecated and should not be used in new code:
 For disconnecting proxies, use:
 
 ```typescript
-import { disconnect } from '@nothinq/sdk';
+import { disconnect } from "@nothinq/sdk";
 
 disconnect(proxy);
 ```
@@ -885,7 +892,7 @@ disconnect(proxy);
 ## Example Extension
 
 ```typescript
-import { createSDK, PromptContext } from '@nothinq/sdk';
+import { createSDK, PromptContext } from "@nothinq/sdk";
 
 interface MyExtensionConfig {
   apiEndpoint: string;
@@ -899,29 +906,29 @@ sdk.onready(async () => {
   try {
     // Get configuration
     const config = await sdk.config.get();
-    
+
     // Get theme for UI styling
     const theme = await sdk.theme.get();
     document.body.style.background = theme.background;
-    
+
     // Listen for custom events
-    sdk.listen('data.request', async (message) => {
+    sdk.listen("data.request", async (message) => {
       const data = await fetchData(config.apiEndpoint);
       return { data };
     });
-    
+
     // Notify host we're ready
     sdk.loaded();
   } catch (error) {
-    console.error('Initialization failed:', error);
+    console.error("Initialization failed:", error);
   }
 });
 
 // Send custom events
 async function sendNotification(text: string) {
   await sdk.dispatch({
-    type: 'extension.notification',
-    message: text
+    type: "extension.notification",
+    message: text,
   });
 }
 ```

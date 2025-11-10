@@ -1,0 +1,13 @@
+{
+  "identifier": "vercel",
+  "type": "extension",
+  "author": "vercel",
+  "manifest": "https://raw.githubusercontent.com/nothinq-ai/marketplace/refs/heads/main/extensions/vercel/manifest.json",
+  "meta": {
+    "description": "Connect your AI tools to Vercel using the Model Context Protocol (MCP), an open standard that lets AI assistants interact with your Vercel projects.",
+    "logo": "https://cdn.brandfetch.io/idDpCfN4VD/w/400/h/400/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&t=1759982772575",
+    "tags": ["deployment"]
+  },
+  "version": "1.0.0",
+  "verified": true
+}

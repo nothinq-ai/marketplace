@@ -2,12 +2,12 @@
   "identifier": "context7",
   "type": "extension",
   "author": "uptash",
-  "manifest": "http://localhost:3400/manifest.json",
+  "manifest": "https://raw.githubusercontent.com/nothinq-ai/marketplace/refs/heads/main/extensions/context7/manifest.json",
   "meta": {
     "description": "Up-to-date documentation for LLMs and AI code editors",
     "logo": "https://context7.com/favicon.ico",
     "tags": ["document"]
   },
-  "version": "1.1.0",
+  "version": "1.0.0",
   "verified": true
 }

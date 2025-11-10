@@ -1,0 +1,29 @@
+{
+  "identifier": "context7",
+  "meta": {
+    "description": "Up-to-date documentation for LLMs and AI code editors",
+    "logo": "https://context7.com/favicon.ico",
+    "tags": ["document"]
+  },
+  "author": "uptash",
+  "overview": "https://raw.githubusercontent.com/upstash/context7/refs/heads/master/README.md",
+  "server": {
+    "type": "http",
+    "url": "https://mcp.context7.com/mcp",
+    "headers": {}
+  },
+  "config_schema": {
+    "properties": {
+      "context7ApiKey": {
+        "type": "auth",
+        "key": "headers.CONTEXT7_API_KEY"
+      }
+    },
+    "required": []
+  },
+  "auth": {
+    "type": "apiKey"
+  },
+  "scope": "user",
+  "version": "1.0.0"
+}
