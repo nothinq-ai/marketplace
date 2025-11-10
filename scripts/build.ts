@@ -6,6 +6,10 @@ const build = async () => {
   const publicDir = resolve(process.cwd(), "public");
   const outputFile = join(publicDir, "index.json");
 
+  // Read package.json for version
+  const packageJsonPath = resolve(process.cwd(), "package.json");
+  const packageJson = JSON.parse(readFileSync(packageJsonPath, "utf-8"));
+
   // Ensure public directory exists
   mkdirSync(publicDir, { recursive: true });
 
@@ -34,8 +38,8 @@ const build = async () => {
 
   // Build the index
   const index = {
-    name: "@nothing/marketplace",
-    version: "1.0.0",
+    name: packageJson.name,
+    version: packageJson.version,
     extensions,
     tags: Array.from(allTags).sort(),
   };
