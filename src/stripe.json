@@ -2,7 +2,7 @@
   "identifier": "stripe",
   "type": "extension",
   "author": "stripe",
-  "manifest": "http://stripe.nothinq.ai/manifest.json",
+  "manifest": "https://stripe.nothinq.ai/manifest.json",
   "meta": {
     "description": "The Stripe Model Context Protocol (MCP) server defines a set of tools that AI agents can use to interact with the Stripe API and search our knowledge base (including documentation and support articles).",
     "logo": "https://cdn.brandfetch.io/idxAg10C0L/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1746435900077",
