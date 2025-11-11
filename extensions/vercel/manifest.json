@@ -5,7 +5,7 @@
     "logo": "https://cdn.brandfetch.io/idDpCfN4VD/w/400/h/400/theme/dark/icon.png?c=1bxid64Mup7aczewSAYMX&t=1759982772575",
     "tags": ["deployment"]
   },
-  "overview": "https://raw.githubusercontent.com/nothinq-ai/marketplace/refs/heads/main/README.md",
+  "overview": "https://raw.githubusercontent.com/nothinq-ai/marketplace/refs/heads/main/extensions/vercel/README.md",
   "author": "vercel",
   "server": {
     "type": "http",
